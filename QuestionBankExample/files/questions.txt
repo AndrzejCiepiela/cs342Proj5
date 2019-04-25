@@ -1,0 +1,10 @@
+Has methods that are declared but not implemented, can not be instantiated only extended by a subclass:a)abstract b)final c)static d)public
+Process of converting an object of a wrapper type (Integer) to its corresponding primitive (int) value:a)casting b)unboxing c)autoboxing d)thread
+A piece of code written by a developer that executes a specific functionality in the code to be tested and asserts a certain behavior or state:a)unit test b)java test c)uml test d)generic test
+Can you instantiate an interface?:a)yes b)no c)sometimes d)not sure
+Supports multiple inheritance:a)abstract class b)public class c)interface d)private class
+This design pattern extends the functionality of a certain object at runtime without affecting the other instances of that class:a)factory b)adapter c)observer d)decorator
+The change of state in one object must be reflected in another without keeping the objects tightly coupled. What design pattern would you use?:a)factory b)adapter c)observer d)strategy
+We want to access the elements of an aggregate object without exposing it's underlying representation. What design pattern would you use?:a)factory b)iterator c)facade d)strategy
+Instance of a class:a)integer b)object c)private d)interface
+Also known as data hiding:a)masking b)private c)encapsulation d)shadowing
