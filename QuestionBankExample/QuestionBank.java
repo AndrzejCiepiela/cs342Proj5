@@ -5,7 +5,10 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class QuestionBank {
@@ -18,6 +21,9 @@ public class QuestionBank {
 	
 	// holds the answers for the questions
 	private ArrayList<String> answers = new ArrayList<String>();
+	
+	// will have the randomized indices of the questions
+	Queue<Integer> randomQueue = new LinkedList<>();
 	
 	// initiate the files
 	private File myQuestions = new File("src/files/questions.txt");
@@ -73,13 +79,28 @@ public class QuestionBank {
 		} catch (FileNotFoundException e) {
 			System.out.println("Something went wrong while reading the file...");
 		}
+		
+		// create an array with random numbers
+		ArrayList<Integer> tmp = new ArrayList<Integer>();
+		
+		for(int j = 0; j < questions.size(); j++) {
+			tmp.add(j);
+		}
+		
+		Collections.shuffle(tmp);
+		
+		// fill the queue with numbers from randomized array
+		for(int k = 0; k < questions.size(); k++) {
+			randomQueue.add(tmp.get(k));
+		}
 	}
 	
 	// get a question from the question bank
 	public String getQuestion() {
 		
 		// return a random question
-		int question = random.nextInt(questions.size());
+		int question = randomQueue.peek();
+		randomQueue.remove();
 		currentQuestionIndex = question;
 		return questions.get(question);
 	}
